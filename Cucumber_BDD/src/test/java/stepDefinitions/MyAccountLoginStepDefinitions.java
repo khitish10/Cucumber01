@@ -49,7 +49,9 @@ public class MyAccountLoginStepDefinitions {
 	public void user_logs_in_successfully() {
 		String expected = "My Account – Automation Practice Site";
 		String actual = driver.getTitle();
-		Assert.assertEquals(actual, expected, "Title mismatch found");
+//		System.out.println(expected);
+//		System.out.println(actual);
+		Assert.assertEquals(actual, expected);
 		
 	    
 	}
