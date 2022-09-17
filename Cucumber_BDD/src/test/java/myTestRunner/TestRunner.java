@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome=true,//gives detailed logs
 		plugin={"pretty",
                 "json:target/cucumber-report/cucumber.json",
-                "html:target/cucumber-report/cucumber.html"}
+                "html:target/cucumber-report/cucumber.html"}//plugins generate reports in different formats
 		)
 public class TestRunner {
 

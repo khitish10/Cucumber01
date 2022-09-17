@@ -25,7 +25,7 @@ public class MyAccountLoginStepDefinitions {
 
 	@When("Enter URL {string}")
 	public void enter_url(String string) {
-		driver.get("https://practice.automationtesting.in/");
+		driver.get(string);
 	    
 	}
 
@@ -34,10 +34,11 @@ public class MyAccountLoginStepDefinitions {
 	    driver.findElement(By.xpath("//a[text()='My Account']")).click();
 	}
 
-	@And("Enter registered username and password")
-	public void enter_registered_username_and_password() {
-	    driver.findElement(By.name("username")).sendKeys("khitish10@gmail.com");
-	    driver.findElement(By.name("password")).sendKeys("Wuwwy4321l@ve");
+
+	@When("Enter registered username {string} and password {string}")
+	public void enter_registered_username_and_password(String username, String password) {
+		driver.findElement(By.name("username")).sendKeys(username);
+	    driver.findElement(By.name("password")).sendKeys(password);
 	}
 
 	@And("Click on login button")
@@ -52,6 +53,7 @@ public class MyAccountLoginStepDefinitions {
 //		System.out.println(expected);
 //		System.out.println(actual);
 		Assert.assertEquals(actual, expected);
+		driver.close();
 		
 	    
 	}
