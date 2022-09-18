@@ -54,8 +54,18 @@ public class MyAccountLoginStepDefinitions {
 //		System.out.println(actual);
 		Assert.assertEquals(actual, expected);
 		driver.close();
-		
-	    
 	}
+	
+	@Then("Verify Login")
+	public void verify_login() {
+	   boolean status = driver.findElement(By.xpath("//ul[@class='woocommerce-error']")).isDisplayed();
+	   if(status) {
+		   Assert.assertTrue("Invalid Input", true);
+	   }else {
+		   Assert.assertTrue(true);
+	   }
+	}
+	
+	
 
 }
